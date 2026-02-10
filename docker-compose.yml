@@ -27,7 +27,7 @@
     build:
       context: ./client
       args:
-        VITE_API_URL: /api
+        VITE_API_URL: http://localhost:5000/api
     restart: unless-stopped
     ports:
       - '80:80'
