@@ -22,10 +22,18 @@ export default function Schedule() {
           </div>
           {items.map((item) => (
             <div className="table-row" key={item._id}>
-              <div>{new Date(item.dateTime).toLocaleString()}</div>
-              <div>{item.type === 'match' ? 'Матч' : 'Тренировка'}</div>
-              <div>{item.opponent || '-'}</div>
-              <div>{item.location}</div>
+              <div className="table-cell" data-label="Дата">
+                {new Date(item.dateTime).toLocaleString()}
+              </div>
+              <div className="table-cell" data-label="Тип">
+                {item.type === 'match' ? 'Матч' : 'Тренировка'}
+              </div>
+              <div className="table-cell" data-label="Соперник">
+                {item.opponent || '-'}
+              </div>
+              <div className="table-cell" data-label="Место">
+                {item.location}
+              </div>
             </div>
           ))}
         </div>

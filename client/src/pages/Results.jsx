@@ -22,12 +22,18 @@ export default function Results() {
           </div>
           {items.map((item) => (
             <div className="table-row" key={item._id}>
-              <div>{new Date(item.dateTime).toLocaleDateString()}</div>
-              <div>{item.opponent}</div>
-              <div>
+              <div className="table-cell" data-label="Дата">
+                {new Date(item.dateTime).toLocaleDateString()}
+              </div>
+              <div className="table-cell" data-label="Соперник">
+                {item.opponent}
+              </div>
+              <div className="table-cell" data-label="Счет">
                 {item.ourScore}:{item.theirScore}
               </div>
-              <div>{item.competition || '-'}</div>
+              <div className="table-cell" data-label="Турнир">
+                {item.competition || '-'}
+              </div>
             </div>
           ))}
         </div>
